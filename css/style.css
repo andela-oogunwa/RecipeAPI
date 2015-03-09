@@ -6,8 +6,11 @@ body {
   text-align: center;
 }
 
-h2, h3, h4 {
-  color: white;
+h2, h3,{
+  color: black;
+}
+h4 {
+  color:white;
 }
 
 .navbar-text {
@@ -20,7 +23,7 @@ ul {
 }
 
 .jumbotron {
-  background:url("../img/imag.jpeg")no-repeat;
+  background:url("../img/imagereal.jpeg")no-repeat;
   background-size:1500px;
   background-position: absolute;
   height:300px;
