@@ -1,5 +1,5 @@
-var cakeApp = angular.module('recipeApp',['recipeAppService']);
-    cakeApp.controller('recipeAppCntrl',['$scope','recipeAppFactory', function($scope , recipeAppFactory){
+var recipeApp = angular.module('recipeApp',['recipeAppService']);
+    recipeApp.controller('recipeAppCntrl',['$scope','recipeAppFactory', function($scope , recipeAppFactory){
       $scope.searchTitle = function () {
         $scope.loadDiv = true;
           recipeAppFactory.httpCall($scope.titleKeyword, function (response) {

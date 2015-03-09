@@ -6,13 +6,10 @@ body {
   text-align: center;
 }
 
-h2, h3,{
-  color: black;
+h2, h3, h4 {
+  color: white;
+  font-style: italic;
 }
-h4 {
-  color:white;
-}
-
 .navbar-text {
   width: 100%;
   text-align: center !important;
@@ -23,8 +20,73 @@ ul {
 }
 
 .jumbotron {
-  background:url("../img/imagereal.jpeg")no-repeat;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url("../img/various.jpg")no-repeat;
   background-size:1500px;
   background-position: absolute;
   height:300px;
+}
+
+.logo {
+width: 100px;
+height: 100px;
+position: absolute;
+top: 0px;
+right: 0;
+}
+
+/********************************************************************
+
+STYLES FOR ANIMATING IMAGE FLIP
+
+*******************************************************************/
+
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000;
+
+}
+
+.flip-container a {
+  text-decoration: none;
+}
+  /* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 320px;
+  height: 215px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
 }

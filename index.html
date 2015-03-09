@@ -10,10 +10,11 @@
     <nav class="navbar navbar-default navbar-fixed">
       <h5 class="navbar-brand">RECIPE SEARCH</h5>
       <marquee behavior="scroll" direction="right">... food is not simply organic fuel to keep body and soul together, it is a perishable art that must be savoured at the peak of perfection.</marquee>
+      <img ng-src="img/chef.jpg" class="logo">
     </nav>
     <div class="jumbotron">
       <div class="images">
-        <h2 class="navbar-text"> EAT JUST ANYTHING YOU WANT</h2>
+        <h2 class="navbar-text" > EAT JUST ANYTHING YOU WANT</h2>
         <h3 class="navbar-text">HOWEVER YOU WANT....</h3>
         <h4 class="navbar-text">WHENEVER YOU WANT</h4>
       </div>
@@ -32,12 +33,20 @@
           <ul>
             <li ng-repeat="result in response.Results" class='grid-list'>
               <div class="col-md-4">
+              <div class="flip-container">
                 <h5>{{result.Title}}</h5>
-                <a href="{{result.WebURL}}" target="_blank"><img class="img-thumbnail img-responsive" style="width:250px;height:150px" ng-src="{{result.ImageURL}}"
-                /></a>
-                <p>Category: {{result.Category}}</p>
-                <span>Type of {{result.Category}} : {{result.Subcategory}}</span>
-                <p>Recipe ID: {{result.RecipeID}}</p>
+                <div class="flipper">
+                <div class="front">
+                  <a href="{{result.WebURL}}" target="_blank"><img class="img-thumbnail img-responsive" style="width:250px;height:150px" ng-src="{{result.ImageURL}}"
+                  /></a>
+                </div>
+                <div class="back">
+                  <a href="{{result.WebURL}}" target="_blank"><p>Category: {{result.Category}}</p>
+                  <span>Type of {{result.Category}} : {{result.Subcategory}}</span>
+                  <p>Recipe ID: {{result.RecipeID}}</p></a>
+                </div>
+                </div>
+                </div>
               </div>
             </li>
           </ul>
