@@ -20,7 +20,7 @@ ul {
 }
 
 .jumbotron {
-  background:url("../img/imag.jpeg") no-repeat;
+  background:url("../img/imag.jpeg")no-repeat;
   background-size:1500px;
   background-position: absolute;
   height:300px;
