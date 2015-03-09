@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="recipeApp">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Recipe APP</title>
+  </head>
+  <body ng-controller="recipeAppCntrl">
+    <nav class="navbar navbar-default navbar-fixed">
+      <h5 class="navbar-brand">RECIPE SEARCH</h5>
+      <marquee behavior="scroll" direction="right">... food is not simply organic fuel to keep body and soul together, it is a perishable art that must be savoured at the peak of perfection.</marquee>
+    </nav>
+    <div class="jumbotron">
+      <div class="images">
+        <h2 class="navbar-text"> EAT JUST ANYTHING YOU WANT</h2>
+        <h3 class="navbar-text">HOWEVER YOU WANT....</h3>
+        <h4 class="navbar-text">WHENEVER YOU WANT</h4>
+      </div>
+      <div>  
+        <form class="form-inline" ng-submit="searchTitle()">
+          <input class="form-control" type="text" ng-model="titleKeyword" placeholder="Enter food name">
+          <button class="btn btn-primary">SEARCH</button><br><br>
+        </form>
+      </div>
+    </div>
+    <div class="content row">
+      <div class='loading' ng-show="loadDiv">
+        <img src="img/loading2.gif"/>
+      </div>
+      <div ng-bind="noResult" ng-class="{'alert alert-warning alert-dismissible': noResult}" role="alert"></div>
+          <ul>
+            <li ng-repeat="result in response.Results" class='grid-list'>
+              <div class="col-md-4">
+                <h5>{{result.Title}}</h5>
+                <a href="{{result.WebURL}}" target="_blank"><img class="img-thumbnail img-responsive" style="width:250px;height:150px" ng-src="{{result.ImageURL}}"
+                /></a>
+                <p>Category: {{result.Category}}</p>
+                <span>Type of {{result.Category}} : {{result.Subcategory}}</span>
+                <p>Recipe ID: {{result.RecipeID}}</p>
+              </div>
+            </li>
+          </ul>
+      </div>
+    </div>
+
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
